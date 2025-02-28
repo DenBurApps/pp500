@@ -854,7 +854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start the fun
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
   m_sharedMaterial: {fileID: 1940560864097203583, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
