@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,11 @@ public class Onboarding : MonoBehaviour
     [SerializeField] private ScreenVisabilityHandler _firstWindow;
     [SerializeField] private ScreenVisabilityHandler _secondWindow;
     [SerializeField] private ScreenVisabilityHandler _thirdWindow;
+    
+    [Header("Animation Settings")]
+    [SerializeField] private float _animationDuration = 0.5f;
+    [SerializeField] private Ease _inEase = Ease.OutBack;
+    [SerializeField] private Ease _outEase = Ease.InBack;
 
     private void Awake()
     {
@@ -16,9 +22,9 @@ public class Onboarding : MonoBehaviour
 
     private void Start()
     {
-        _view.EnableWindow(_firstWindow);
-        _view.DisableWindow(_secondWindow);
-        _view.DisableWindow(_thirdWindow);
+        _view.EnableWindowWithAnimation(_firstWindow, _animationDuration, _inEase);
+        _view.DisableWindowImmediate(_secondWindow);
+        _view.DisableWindowImmediate(_thirdWindow);
     }
 
     private void OnEnable()
@@ -37,22 +43,23 @@ public class Onboarding : MonoBehaviour
 
     public void ProcessFirstScreenButtonClicked()
     {
-        _view.DisableWindow(_firstWindow);
-        _view.EnableWindow(_secondWindow);
-        _view.DisableWindow(_thirdWindow);
+        _view.DisableWindowWithAnimation(_firstWindow, _animationDuration / 2, _outEase);
+        _view.EnableWindowWithAnimation(_secondWindow, _animationDuration, _inEase);
+        _view.DisableWindowImmediate(_thirdWindow);
     }
 
     private void ProcessSecondScreenButtonClicked()
     {
-        _view.DisableWindow(_firstWindow);
-        _view.DisableWindow(_secondWindow);
-        _view.EnableWindow(_thirdWindow);
+        _view.DisableWindowWithAnimation(_secondWindow, _animationDuration / 2, _outEase);
+        _view.EnableWindowWithAnimation(_thirdWindow, _animationDuration, _inEase);
+        _view.DisableWindowImmediate(_firstWindow);
         
         PlayerPrefs.SetInt("Onboarding", 1);
     }
 
     private void ProcessThirdScreenButtonClicked()
     {
-        SceneManager.LoadScene("MainScene");
+        _view.DisableWindowWithAnimation(_thirdWindow, _animationDuration / 2, _outEase)
+            .OnComplete(() => SceneManager.LoadScene("MainScene"));
     }
 }

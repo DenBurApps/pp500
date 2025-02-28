@@ -55,28 +55,33 @@ public class SettingsScreen : MonoBehaviour
 
     private void OnEnable()
     {
-        _mainScreen.SettingsOpened += _view.Enable;
+        _mainScreen.SettingsOpened += EnableSettingsWithAnimation;
         _view.SoundToggled += ProcessSoundToggled;
         _view.MusicToggled += ProcessMusicToggled;
         _view.FeedbackClicked += ProcessFeedbackClicked;
         _view.PrivacyClicked += ProcessPrivacyPolicyClicked;
         _view.TermsOfUseClicked += ProcessTermsOfUseClicked;
-        _privacyPolicy.BackButtonClicked += _view.Enable;
-        _termsOfUse.BackButtonClicked += _view.Enable;
+        _privacyPolicy.BackButtonClicked += EnableSettingsWithAnimation;
+        _termsOfUse.BackButtonClicked += EnableSettingsWithAnimation;
         _view.BackButtonClicked += ProcessBackButtonClicked;
     }
 
     private void OnDisable()
     {
-        _mainScreen.SettingsOpened -= _view.Enable;
+        _mainScreen.SettingsOpened -= EnableSettingsWithAnimation;
         _view.SoundToggled -= ProcessSoundToggled;
         _view.MusicToggled -= ProcessMusicToggled;
         _view.FeedbackClicked -= ProcessFeedbackClicked;
         _view.PrivacyClicked -= ProcessPrivacyPolicyClicked;
         _view.TermsOfUseClicked -= ProcessTermsOfUseClicked;
-        _privacyPolicy.BackButtonClicked -= _view.Enable;
-        _termsOfUse.BackButtonClicked -= _view.Enable;
+        _privacyPolicy.BackButtonClicked -= EnableSettingsWithAnimation;
+        _termsOfUse.BackButtonClicked -= EnableSettingsWithAnimation;
         _view.BackButtonClicked -= ProcessBackButtonClicked;
+    }
+
+    private void EnableSettingsWithAnimation()
+    {
+        _view.EnableWithAnimation();
     }
 
     private void ProcessSoundToggled()
@@ -93,6 +98,7 @@ public class SettingsScreen : MonoBehaviour
             _view.ToggleOnSoundSprite();
             _audioMixer.audioMixer.SetFloat("Effects", -20f);
             _soundOn = true;
+            PlayerPrefs.SetInt("SoundOff", 0);
         }
     }
 
@@ -110,6 +116,7 @@ public class SettingsScreen : MonoBehaviour
             _view.ToggleOnMusicSprite();
             _audioMixer.audioMixer.SetFloat("Music", -20f);
             _musicOn = true;
+            PlayerPrefs.SetInt("MusicOff", 0);
         }
     }
 
@@ -122,19 +129,20 @@ public class SettingsScreen : MonoBehaviour
 
     private void ProcessPrivacyPolicyClicked()
     {
-        OpenPrivacyPolicy?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(() => {
+            OpenPrivacyPolicy?.Invoke();
+        });
     }
 
     private void ProcessTermsOfUseClicked()
     {
-        OpenTermsOfUse?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(() => {
+            OpenTermsOfUse?.Invoke();
+        });
     }
 
     private void ProcessBackButtonClicked()
     {
         BackButtonClicked?.Invoke();
-        _view.Disable();
     }
 }

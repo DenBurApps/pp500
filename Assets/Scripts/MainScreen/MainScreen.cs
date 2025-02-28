@@ -8,64 +8,68 @@ public class MainScreen : MonoBehaviour
     [SerializeField] private MemoryFlipDescriptionView _memoryFlipDescriptionView;
     [SerializeField] private ShapeSorterDescriptionView _sorterDescriptionView;
     [SerializeField] private SettingsScreen _settings;
-    
+
+    [Header("Animation Settings")] [SerializeField]
+    private float _animationDuration = 0.5f;
+
+    [SerializeField] private float _staggerDelay = 0.1f;
+
     public event Action SpeedTapOpened;
     public event Action SettingsOpened;
     public event Action MemoryFlipOpened;
     public event Action ShapeSorterOpened;
-    
+
     private void Start()
     {
-        _view.Enable();
+        _view.EnableWithAnimation(_animationDuration, _staggerDelay);
     }
 
     private void OnEnable()
     {
-        _speedTapDescriptionView.BackButtonClicked += _view.Enable;
-        _memoryFlipDescriptionView.BackButtonClicked += _view.Enable;
-        _sorterDescriptionView.BackButtonClicked += _view.Enable;
-        _settings.BackButtonClicked += _view.Enable;
+        _speedTapDescriptionView.BackButtonClicked += EnableViewWithAnimation;
+        _memoryFlipDescriptionView.BackButtonClicked += EnableViewWithAnimation;
+        _sorterDescriptionView.BackButtonClicked += EnableViewWithAnimation;
+        _settings.BackButtonClicked += EnableViewWithAnimation;
         _view.SpeedTapClicked += OpenSpeedTapDescription;
         _view.MemoryFlipClicked += OpenMemoryFlipDescription;
         _view.ShapeSorterClicked += OpenShapeSorterDescription;
         _view.SettingClicked += OpenSetting;
-
     }
 
     private void OnDisable()
     {
-        _speedTapDescriptionView.BackButtonClicked -= _view.Enable;
-        _memoryFlipDescriptionView.BackButtonClicked -= _view.Enable;
-        _sorterDescriptionView.BackButtonClicked -= _view.Enable;
-        _settings.BackButtonClicked -= _view.Enable;
+        _speedTapDescriptionView.BackButtonClicked -= EnableViewWithAnimation;
+        _memoryFlipDescriptionView.BackButtonClicked -= EnableViewWithAnimation;
+        _sorterDescriptionView.BackButtonClicked -= EnableViewWithAnimation;
+        _settings.BackButtonClicked -= EnableViewWithAnimation;
         _view.SpeedTapClicked -= OpenSpeedTapDescription;
         _view.MemoryFlipClicked -= OpenMemoryFlipDescription;
         _view.ShapeSorterClicked -= OpenShapeSorterDescription;
         _view.SettingClicked -= OpenSetting;
     }
 
+    private void EnableViewWithAnimation()
+    {
+        _view.EnableWithAnimation(_animationDuration, _staggerDelay);
+    }
+
     private void OpenSpeedTapDescription()
     {
-        SpeedTapOpened?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(_animationDuration, () => { SpeedTapOpened?.Invoke(); });
     }
 
     private void OpenMemoryFlipDescription()
     {
-        MemoryFlipOpened?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(_animationDuration, () => { MemoryFlipOpened?.Invoke(); });
     }
 
     private void OpenShapeSorterDescription()
     {
-        ShapeSorterOpened?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(_animationDuration, () => { ShapeSorterOpened?.Invoke(); });
     }
 
     private void OpenSetting()
     {
-        SettingsOpened?.Invoke();
-        _view.Disable();
+        _view.DisableWithAnimation(_animationDuration, () => { SettingsOpened?.Invoke(); });
     }
-    
 }

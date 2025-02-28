@@ -2295,7 +2295,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.85
+  m_fontSize: 57.9
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2492,6 +2492,11 @@ MonoBehaviour:
   _hardButton: {fileID: 1622502257}
   _backButton: {fileID: 1986403492}
   _gameController: {fileID: 2953037}
+  _animationDuration: 0.5
+  _buttonsDelay: 0.1
+  _animationEase: 27
+  _buttonHoverScale: 1.1
+  _initialOffsetY: 100
 --- !u!1 &485925351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,6 +2763,11 @@ MonoBehaviour:
   _continueButton: {fileID: 601023319}
   _restartButton: {fileID: 1845622463}
   _mainMenuButton: {fileID: 911760880}
+  _animationDuration: 0.5
+  _buttonsDelay: 0.1
+  _animationEase: 27
+  _buttonHoverScale: 1.1
+  _backgroundPanel: {fileID: 0}
 --- !u!114 &505733547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3571,7 +3581,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: f1983b319bb41774cbb83865c6c81f92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5201,7 +5211,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7dc1240c7ee6a8945b712f489b96ab92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8691,6 +8701,13 @@ MonoBehaviour:
   _timerText: {fileID: 1828826176}
   _levelText: {fileID: 1450730854}
   _victorySound: {fileID: 897272959}
+  _animationDuration: 0.5
+  _animationEase: 27
+  _buttonHoverScale: 1.1
+  _textAnimationDelay: 0.2
+  _backgroundPanel: {fileID: 0}
+  _victoryContainer: {fileID: 0}
+  _congratulationsText: {fileID: 0}
 --- !u!1 &1450730852
 GameObject:
   m_ObjectHideFlags: 0
@@ -9725,7 +9742,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: c8d169593d622ce45a30f16b3a9ef35c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11716,7 +11733,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4083084075817719160, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: a98fe08e01119c440885dd1ff5bb675b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

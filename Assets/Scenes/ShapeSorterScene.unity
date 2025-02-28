@@ -956,6 +956,9 @@ MonoBehaviour:
   _timerText: {fileID: 450236857}
   _coinsText: {fileID: 144214814}
   _victorySound: {fileID: 1042377756}
+  _victoryPanel: {fileID: 0}
+  _animationDuration: 0.7
+  _confettiParticles: {fileID: 0}
 --- !u!114 &231746981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,7 +1150,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.4
+  m_fontSize: 62.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1281,7 +1284,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.4
+  m_fontSize: 62.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1415,7 +1418,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
+  m_fontSize: 72
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1762,7 +1765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.1
+  m_fontSize: 72
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1841,7 +1844,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: f1983b319bb41774cbb83865c6c81f92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2261,7 +2264,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.4
+  m_fontSize: 62.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2529,7 +2532,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
+  m_fontSize: 72
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3280,7 +3283,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
+  m_fontSize: 62.55
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4454,6 +4457,8 @@ MonoBehaviour:
   _newGameButton: {fileID: 1789878073}
   _continueButton: {fileID: 1205986449}
   _exitButton: {fileID: 1262756863}
+  _animationDuration: 0.5
+  _buttonOffset: 50
 --- !u!1 &852410069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,7 +4923,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4083084075817719160, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8d8b71dd34037a344a1c369f3001de47, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5388,7 +5393,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7dc1240c7ee6a8945b712f489b96ab92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5571,7 +5576,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.6
+  m_fontSize: 68.9
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6812,7 +6817,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.4
+  m_fontSize: 62.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6991,6 +6996,9 @@ MonoBehaviour:
   _triangleQuantity: {fileID: 1385564461}
   _circleQuantity: {fileID: 413958340}
   _rectangleQuantity: {fileID: 254517994}
+  _animationDuration: 0.5
+  _popupScale: 1.2
+  _fadeInDelay: 0.1
 --- !u!114 &1410919369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7099,7 +7107,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.6
+  m_fontSize: 68.9
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8733,7 +8741,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.05
+  m_fontSize: 52.65
   m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9331,7 +9339,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.9
+  m_fontSize: 62.1
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9751,6 +9759,8 @@ MonoBehaviour:
   _hardButton: {fileID: 21634842}
   _backButton: {fileID: 1468264390}
   _gameController: {fileID: 1992798133}
+  _animationDuration: 0.5
+  _buttonSpacing: 0.1
 --- !u!114 &1908903383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10732,7 +10742,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
+  m_fontSize: 72
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -926,6 +926,8 @@ MonoBehaviour:
   _restartButton: {fileID: 1021894980}
   _mainMenuButton: {fileID: 983140657}
   _speedTapGameContoller: {fileID: 1847935859}
+  _animationDuration: 0.5
+  _buttonOffset: 50
 --- !u!224 &130233389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2392,7 +2394,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4083084075817719160, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: ad1c4505e11bcb844ac6a780cc68a966, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2841,7 +2843,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: e8d293b918f00da4185578bef35c7b68, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2969,7 +2971,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: c8d169593d622ce45a30f16b3a9ef35c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3311,6 +3313,9 @@ MonoBehaviour:
   _hpText: {fileID: 1466850757}
   _winSound: {fileID: 665764498}
   _speedTapGameContoller: {fileID: 1847935859}
+  _animationDuration: 0.5
+  _textAnimationDuration: 0.7
+  _buttonOffset: 50
 --- !u!224 &628886874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3561,7 +3566,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7dc1240c7ee6a8945b712f489b96ab92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4463,6 +4468,12 @@ MonoBehaviour:
   _bombText: {fileID: 1274453461}
   _loseSound: {fileID: 496987755}
   _speedTapGameContoller: {fileID: 1847935859}
+  _animationDuration: 0.5
+  _animationEase: 27
+  _buttonHoverScale: 1.1
+  _backgroundPanel: {fileID: 0}
+  _loseContainer: {fileID: 0}
+  _gameOverText: {fileID: 0}
 --- !u!224 &880523090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5007,10 +5018,10 @@ RectTransform:
   - {fileID: 1322730451}
   m_Father: {fileID: 1947910397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 161}
-  m_SizeDelta: {x: 711.6066, y: 119.4892}
+  m_AnchorMin: {x: 0.13656138, y: 0.54780483}
+  m_AnchorMax: {x: 0.8634386, y: 0.6042183}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955355955
 MonoBehaviour:
@@ -5620,10 +5631,10 @@ RectTransform:
   - {fileID: 2610303}
   m_Father: {fileID: 1947910397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: -163}
-  m_SizeDelta: {x: 711.6066, y: 119.4892}
+  m_AnchorMin: {x: 0.13656138, y: 0.39483744}
+  m_AnchorMax: {x: 0.8634386, y: 0.4512509}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1007907491
 GameObject:
@@ -5772,10 +5783,10 @@ RectTransform:
   - {fileID: 1528666882}
   m_Father: {fileID: 1947910397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: -1}
-  m_SizeDelta: {x: 711.6066, y: 119.4892}
+  m_AnchorMin: {x: 0.13656138, y: 0.47132117}
+  m_AnchorMax: {x: 0.8634386, y: 0.52773464}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021894978
 MonoBehaviour:
@@ -11517,6 +11528,8 @@ MonoBehaviour:
   _newGameButton: {fileID: 1849972590}
   _continueButton: {fileID: 1655030934}
   _exitButton: {fileID: 2024489861}
+  _animationDuration: 0.5
+  _buttonOffset: 50
 --- !u!1 &2024489859
 GameObject:
   m_ObjectHideFlags: 0
@@ -12181,7 +12194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 4435810009032629106, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
   m_audioClip: {fileID: 8300000, guid: f1983b319bb41774cbb83865c6c81f92, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

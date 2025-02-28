@@ -945,6 +945,13 @@ MonoBehaviour:
   _hardLevelPassedText: {fileID: 665791186}
   _timeText: {fileID: 1726145188}
   _coinText: {fileID: 511446550}
+  _animationDuration: 0.5
+  _fadeInEase: 6
+  _scaleEase: 27
+  _startScale: 0.7
+  _textAnimationDuration: 1
+  _textAnimationEase: 6
+  _textAnimationDelay: 0.3
 --- !u!1 &168823652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1194,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.65
+  m_fontSize: 60.8
   m_fontSizeBase: 50.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1719,6 +1726,8 @@ MonoBehaviour:
   _memoryFlipDescriptionView: {fileID: 2116454035}
   _sorterDescriptionView: {fileID: 164251334}
   _settings: {fileID: 1221003701}
+  _animationDuration: 0.5
+  _staggerDelay: 0.1
 --- !u!114 &268390088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1735,6 +1744,16 @@ MonoBehaviour:
   _speedTapButton: {fileID: 1530408212}
   _memoryFlipButton: {fileID: 383619915}
   _shapeSorterButton: {fileID: 2106109003}
+  _menuItems:
+  - {fileID: 1716830910}
+  - {fileID: 952383575}
+  - {fileID: 688886017}
+  _fadeInDuration: 0.3
+  _scaleAnimDuration: 0.5
+  _staggerDelay: 0.1
+  _fadeInEase: 6
+  _scaleEase: 27
+  _startScale: 0.3
 --- !u!114 &268390089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,11 +2802,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Give your memory a workout! In our classic card game, you will turn over
-    the cards and look for identical pairs. Memorize the arrangement of the cards
-    and try to make as many pairs as possible until you clear the entire game table.
-    Each found pair will bring you points and bring you closer to victory! Ready
-    to test your memorization skills?
+  m_text: Exercise your brain with this classic memory game! Flip cards to find matching
+    pairs while memorizing their positions. Clear the board by making successful
+    matches and watch your score climb. Perfect for all ages, this game strengthens
+    memory skills while providing hours of entertainment. How quickly can you clear
+    the entire board?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
   m_sharedMaterial: {fileID: 1940560864097203583, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
@@ -2814,7 +2833,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.25
+  m_fontSize: 35.35
   m_fontSizeBase: 37.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3122,46 +3141,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528044651}
   m_CullTransparentMesh: 1
---- !u!21 &555010467
-Material:
-  serializedVersion: 8
+--- !u!1 &576297610
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 970.04004, g: 485.18286, b: 80, a: 0}
-  m_BuildTextureStacks: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576297612}
+  - component: {fileID: 576297611}
+  m_Layer: 0
+  m_Name: MainScreenMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &576297611
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576297610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4083084075817719160, guid: 9745c897c1a06544f8527ed72e49460c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4540861b0b1dd3140b0d5467efbcfa24, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.124
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &576297612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576297610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 666.6499, y: 1384.8143, z: -5.0576577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599533923
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,11 +4807,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get ready for the ultimate test! In our reaction game, your reflexes will
-    be put to the ultimate test. You will have to press the screen in time to hit
-    the objects that appear and at the same time cleverly avoid false targets. Each
-    successful hit will bring you closer to victory and prove the high speed of your
-    reaction!
+  m_text: Test your hand-eye coordination skills in our exciting shape puzzle! You
+    need to quickly match the shapes to their correct outlines or holes. Drag and
+    drop the pieces on the screen to the correct places until you have completed
+    the whole puzzle. Each solved puzzle will bring you a sense of accomplishment
+    and bring you closer to the title of puzzle master!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
   m_sharedMaterial: {fileID: 1940560864097203583, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
@@ -4731,7 +4838,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.9
+  m_fontSize: 34.2
   m_fontSizeBase: 37.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5135,46 +5242,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 671.08}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!21 &987484772
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 970.04004, g: 485.18286, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &992872269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6229,7 +6296,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110235662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6281,8 +6348,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!1 &1124373741
 GameObject:
@@ -6482,7 +6549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 555010467}
+  m_Material: {fileID: 1330511236}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -7042,6 +7109,12 @@ MonoBehaviour:
   _soundButtonImage: {fileID: 174207141}
   _toggleOffSprite: {fileID: 21300000, guid: b2442333f3aac1346a3de0c844b6ec16, type: 3}
   _toggleOnSprite: {fileID: 21300000, guid: 94a00605fef9fb04e840fcefcf8a5602, type: 3}
+  _animationDuration: 0.5
+  _fadeInEase: 6
+  _scaleEase: 27
+  _startScale: 0.7
+  _buttonAnimationDelay: 0.05
+  _animatedElements: []
 --- !u!114 &1221003703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7431,6 +7504,13 @@ MonoBehaviour:
   _mainScreen: {fileID: 268390087}
   _destroyedMeteoritesText: {fileID: 1388253350}
   _longestLevelText: {fileID: 813576907}
+  _animationDuration: 0.5
+  _fadeInEase: 6
+  _scaleEase: 27
+  _startScale: 0.7
+  _textAnimationDuration: 1
+  _textAnimationEase: 6
+  _textAnimationDelay: 0.3
 --- !u!114 &1259764114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7818,6 +7898,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317459885}
   m_CullTransparentMesh: 1
+--- !u!21 &1330511236
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 879.31555, g: 485.18286, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1335142406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8058,7 +8178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1737901912}
+  m_Material: {fileID: 1726066902}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -8352,6 +8472,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388253348}
   m_CullTransparentMesh: 1
+--- !u!21 &1404915232
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 879.31555, g: 485.18286, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1413402816
 GameObject:
   m_ObjectHideFlags: 0
@@ -9501,7 +9661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 987484772}
+  m_Material: {fileID: 1404915232}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -9904,6 +10064,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1726066902
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 879.31555, g: 485.18286, b: 80, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1726145185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10038,46 +10238,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!21 &1737901912
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 970.04004, g: 485.18286, b: 80, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1788463266
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,7 +11278,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -12005,11 +12165,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test your hand-eye coordination skills in our exciting shape puzzle! You
-    need to quickly match the shapes to their correct outlines or holes. Drag and
-    drop the pieces on the screen to the correct places until you have completed
-    the whole puzzle. Each solved puzzle will bring you a sense of accomplishment
-    and bring you closer to the title of puzzle master!
+  m_text: Master the art of precision in this engaging shape-matching challenge!
+    Drag and drop various shapes into their corresponding outlines with speed and
+    accuracy. Each correctly placed piece brings you closer to completing the puzzle.
+    Test your spatial awareness and hand-eye coordination as puzzles increase in
+    complexity. Are you ready to become the ultimate puzzle master?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
   m_sharedMaterial: {fileID: 1940560864097203583, guid: b9ae5dd4cd8b15b4ab0e95b574304cac, type: 2}
@@ -12036,7 +12196,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.65
+  m_fontSize: 32.5
   m_fontSizeBase: 37.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12666,6 +12826,13 @@ MonoBehaviour:
   _hardLevelPassedText: {fileID: 915227058}
   _youVictoryText: {fileID: 2105487130}
   _youLostText: {fileID: 67728688}
+  _animationDuration: 0.5
+  _fadeInEase: 6
+  _scaleEase: 27
+  _startScale: 0.7
+  _textAnimationDuration: 1
+  _textAnimationEase: 6
+  _textAnimationDelay: 0.3
 --- !u!114 &2116454036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12906,93 +13073,92 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Last updated: November 26, 2024
 
-        
 
-        Please read these
-        terms and conditions carefully before using Our Service.
 
-        
+        Please read these terms
+        and conditions carefully before using Our Service.
+
+
 
         Interpretation
         and Definitions
 
         Interpretation
 
-        The words of which the
-        initial letter is capitalized have meanings defined under the following conditions.
+        The words of which the initial
+        letter is capitalized have meanings defined under the following conditions.
         The following definitions shall have the same meaning regardless of whether
         they appear in singular or in plural.
 
-        
+
 
         Definitions
 
         For
         the purposes of these Terms and Conditions:
 
-        
 
-        Application
-        means the software program provided by the Company downloaded by You on any
-        electronic device, named Quick Play Hub
 
-        
+        Application means
+        the software program provided by the Company downloaded by You on any electronic
+        device, named Quick Play Hub
 
-        Application
-        Store means the digital distribution service operated and developed by Apple
-        Inc. (Apple App Store) or Google Inc. (Google Play Store) in which the Application
-        has been downloaded.
 
-        
 
-        Affiliate means an entity that
-        controls, is controlled by or is under common control with a party, where
-        "control" means ownership of 50% or more of the shares, equity interest or
-        other securities entitled to vote for election of directors or other managing
-        authority.
+        Application Store means the digital
+        distribution service operated and developed by Apple Inc. (Apple App Store)
+        or Google Inc. (Google Play Store) in which the Application has been downloaded.
 
-        
 
-        Country refers to: Arizona, United States
 
-        
+        Affiliate
+        means an entity that controls, is controlled by or is under common control
+        with a party, where "control" means ownership of 50% or more of the shares,
+        equity interest or other securities entitled to vote for election of directors
+        or other managing authority.
 
-        Company
-        (referred to as either "the Company", "We", "Us" or "Our" in this Agreement)
-        refers to Quick Play Hub.
 
-        
 
-        Device means any device that
-        can access the Service such as a computer, a cellphone or a digital tablet.
+        Country refers to: Arizona, United
+        States
 
-        
 
-        Service
-        refers to the Application.
 
-        
+        Company (referred to as either "the Company", "We", "Us"
+        or "Our" in this Agreement) refers to Quick Play Hub.
 
-        Terms and Conditions (also
-        referred as "Terms") mean these Terms and Conditions that form the entire
-        agreement between You and the Company regarding the use of the Service. This
-        Terms and Conditions agreement has been created with the help of the Free
-        Terms and Conditions Generator.
 
-        
 
-        Third-party Social Media
-        Service means any services or content (including data, information, products
-        or services) provided by a third-party that may be displayed, included or
-        made available by the Service.
+        Device means
+        any device that can access the Service such as a computer, a cellphone or
+        a digital tablet.
 
-        
 
-        You means the individual
-        accessing or using the Service, or the company, or other legal entity on
-        behalf of which such individual is accessing or using the Service, as applicable.
 
-        
+        Service refers to the Application.
+
+
+
+        Terms
+        and Conditions (also referred as "Terms") mean these Terms and Conditions
+        that form the entire agreement between You and the Company regarding the
+        use of the Service. This Terms and Conditions agreement has been created
+        with the help of the Free Terms and Conditions Generator.
+
+
+
+        Third-party
+        Social Media Service means any services or content (including data, information,
+        products or services) provided by a third-party that may be displayed, included
+        or made available by the Service.
+
+
+
+        You means the individual accessing
+        or using the Service, or the company, or other legal entity on behalf of
+        which such individual is accessing or using the Service, as applicable.
+
+
 
         Acknowledgment
 
@@ -13001,26 +13167,26 @@ PrefabInstance:
         that operates between You and the Company. These Terms and Conditions set
         out the rights and obligations of all users regarding the use of the Service.
 
-        
+
 
         Your
         access to and use of the Service is conditioned on Your acceptance of and
         compliance with these Terms and Conditions. These Terms and Conditions apply
         to all visitors, users and others who access or use the Service.
 
-        
+
 
         By
         accessing or using the Service You agree to be bound by these Terms and Conditions.
         If You disagree with any part of these Terms and Conditions then You may
         not access the Service.
 
-        
 
-        You represent that you are over
-        the age of 18. The Company does not permit those under 18 to use the Service.
 
-        
+        You represent that you are over the age
+        of 18. The Company does not permit those under 18 to use the Service.
+
+
 
         Your
         access to and use of the Service is also conditioned on Your acceptance of
@@ -13030,15 +13196,15 @@ PrefabInstance:
         and tells You about Your privacy rights and how the law protects You. Please
         read Our Privacy Policy carefully before using Our Service.
 
-        
+
 
         Links
         to Other Websites
 
-        Our Service may contain links to third-party
-        web sites or services that are not owned or controlled by the Company.
+        Our Service may contain links to third-party web
+        sites or services that are not owned or controlled by the Company.
 
-        
+
 
         The
         Company has no control over, and assumes no responsibility for, the content,
@@ -13049,27 +13215,26 @@ PrefabInstance:
         content, goods or services available on or through any such web sites or
         services.
 
-        
 
-        We strongly advise You to read the terms and
-        conditions and privacy policies of any third-party web sites or services
-        that You visit.
 
-        
+        We strongly advise You to read the terms and conditions
+        and privacy policies of any third-party web sites or services that You visit.
+
+
 
         Termination
 
-        We may terminate
-        or suspend Your access immediately, without prior notice or liability, for
-        any reason whatsoever, including without limitation if You breach these Terms
-        and Conditions.
+        We
+        may terminate or suspend Your access immediately, without prior notice or
+        liability, for any reason whatsoever, including without limitation if You
+        breach these Terms and Conditions.
 
-        
 
-        Upon termination, Your right to use
-        the Service will cease immediately.
 
-        
+        Upon termination, Your right
+        to use the Service will cease immediately.
+
+
 
         Limitation of Liability
 
@@ -13080,80 +13245,79 @@ PrefabInstance:
         by You through the Service or 100 USD if You haven''t purchased anything
         through the Service.
 
-        
 
-        To the maximum extent permitted
-        by applicable law, in no event shall the Company or its suppliers be liable
-        for any special, incidental, indirect, or consequential damages whatsoever
-        (including, but not limited to, damages for loss of profits, loss of data
-        or other information, for business interruption, for personal injury, loss
-        of privacy arising out of or in any way related to the use of or inability
-        to use the Service, third-party software and/or third-party hardware used
-        with the Service, or otherwise in connection with any provision of this Terms),
-        even if the Company or any supplier has been advised of the possibility of
-        such damages and even if the remedy fails of its essential purpose.
 
-        
+        To the maximum extent permitted by applicable
+        law, in no event shall the Company or its suppliers be liable for any special,
+        incidental, indirect, or consequential damages whatsoever (including, but
+        not limited to, damages for loss of profits, loss of data or other information,
+        for business interruption, for personal injury, loss of privacy arising out
+        of or in any way related to the use of or inability to use the Service, third-party
+        software and/or third-party hardware used with the Service, or otherwise
+        in connection with any provision of this Terms), even if the Company or any
+        supplier has been advised of the possibility of such damages and even if
+        the remedy fails of its essential purpose.
 
-        Some
-        states do not allow the exclusion of implied warranties or limitation of
-        liability for incidental or consequential damages, which means that some
-        of the above limitations may not apply. In these states, each party''s liability
-        will be limited to the greatest extent permitted by law.
 
-        
 
-        "AS
-        IS" and "AS AVAILABLE" Disclaimer
+        Some states do not
+        allow the exclusion of implied warranties or limitation of liability for
+        incidental or consequential damages, which means that some of the above limitations
+        may not apply. In these states, each party''s liability will be limited to
+        the greatest extent permitted by law.
 
-        The Service is provided to You
-        "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty
-        of any kind. To the maximum extent permitted under applicable law, the Company,
-        on its own behalf and on behalf of its Affiliates and its and their respective
-        licensors and service providers, expressly disclaims all warranties, whether
-        express, implied, statutory or otherwise, with respect to the Service, including
-        all implied warranties of merchantability, fitness for a particular purpose,
-        title and non-infringement, and warranties that may arise out of course of
-        dealing, course of performance, usage or trade practice. Without limitation
-        to the foregoing, the Company provides no warranty or undertaking, and makes
-        no representation of any kind that the Service will meet Your requirements,
+
+
+        "AS IS" and "AS AVAILABLE"
+        Disclaimer
+
+        The Service is provided to You "AS IS" and "AS AVAILABLE"
+        and with all faults and defects without warranty of any kind. To the maximum
+        extent permitted under applicable law, the Company, on its own behalf and
+        on behalf of its Affiliates and its and their respective licensors and service
+        providers, expressly disclaims all warranties, whether express, implied,
+        statutory or otherwise, with respect to the Service, including all implied
+        warranties of merchantability, fitness for a particular purpose, title and
+        non-infringement, and warranties that may arise out of course of dealing,
+        course of performance, usage or trade practice. Without limitation to the
+        foregoing, the Company provides no warranty or undertaking, and makes no
+        representation of any kind that the Service will meet Your requirements,
         achieve any intended results, be compatible or work with any other software,
         applications, systems or services, operate without interruption, meet any
         performance or reliability standards or be error free or that any errors
         or defects can or will be corrected.
 
-        
 
-        Without limiting
-        the foregoing, neither the Company nor any of the company''s provider makes
-        any representation or warranty of any kind, express or implied: (i) as to
-        the operation or availability of the Service, or the information, content,
-        and materials or products included thereon; (ii) that the Service will be
-        uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency
-        of any information or content provided through the Service; or (iv) that
-        the Service, its servers, the content, or e-mails sent from or on behalf
-        of the Company are free of viruses, scripts, trojan horses, worms, malware,
-        timebombs or other harmful components.
 
-        
+        Without limiting the foregoing,
+        neither the Company nor any of the company''s provider makes any representation
+        or warranty of any kind, express or implied: (i) as to the operation or availability
+        of the Service, or the information, content, and materials or products included
+        thereon; (ii) that the Service will be uninterrupted or error-free; (iii)
+        as to the accuracy, reliability, or currency of any information or content
+        provided through the Service; or (iv) that the Service, its servers, the
+        content, or e-mails sent from or on behalf of the Company are free of viruses,
+        scripts, trojan horses, worms, malware, timebombs or other harmful components.
 
-        Some jurisdictions
-        do not allow the exclusion of certain types of warranties or limitations
-        on applicable statutory rights of a consumer, so some or all of the above
-        exclusions and limitations may not apply to You. But in such a case the exclusions
-        and limitations set forth in this section shall be applied to the greatest
-        extent enforceable under applicable law.
 
-        
 
-        Governing Law
+        Some
+        jurisdictions do not allow the exclusion of certain types of warranties or
+        limitations on applicable statutory rights of a consumer, so some or all
+        of the above exclusions and limitations may not apply to You. But in such
+        a case the exclusions and limitations set forth in this section shall be
+        applied to the greatest extent enforceable under applicable law.
 
-        The
-        laws of the Country, excluding its conflicts of law rules, shall govern this
-        Terms and Your use of the Service. Your use of the Application may also be
-        subject to other local, state, national, or international laws.
 
-        
+
+        Governing
+        Law
+
+        The laws of the Country, excluding its conflicts of law rules,
+        shall govern this Terms and Your use of the Service. Your use of the Application
+        may also be subject to other local, state, national, or international laws.
+
+
 
         Disputes
         Resolution
@@ -13162,49 +13326,48 @@ PrefabInstance:
         You agree to first try to resolve the dispute informally by contacting the
         Company.
 
-        
+
 
         For European Union (EU) Users
 
+        If You are a European
+        Union consumer, you will benefit from any mandatory provisions of the law
+        of the country in which You are resident.
+
+
+
+        United States Legal
+        Compliance
+
+        You represent and warrant that (i) You are not located
+        in a country that is subject to the United States government embargo, or
+        that has been designated by the United States government as a "terrorist
+        supporting" country, and (ii) You are not listed on any United States government
+        list of prohibited or restricted parties.
+
+
+
+        Severability and Waiver
+
+        Severability
+
         If
-        You are a European Union consumer, you will benefit from any mandatory provisions
-        of the law of the country in which You are resident.
+        any provision of these Terms is held to be unenforceable or invalid, such
+        provision will be changed and interpreted to accomplish the objectives of
+        such provision to the greatest extent possible under applicable law and the
+        remaining provisions will continue in full force and effect.
 
-        
 
-        United
-        States Legal Compliance
-
-        You represent and warrant that (i) You
-        are not located in a country that is subject to the United States government
-        embargo, or that has been designated by the United States government as a
-        "terrorist supporting" country, and (ii) You are not listed on any United
-        States government list of prohibited or restricted parties.
-
-        
-
-        Severability
-        and Waiver
-
-        Severability
-
-        If any provision of these Terms
-        is held to be unenforceable or invalid, such provision will be changed and
-        interpreted to accomplish the objectives of such provision to the greatest
-        extent possible under applicable law and the remaining provisions will continue
-        in full force and effect.
-
-        
 
         Waiver
 
-        Except as
-        provided herein, the failure to exercise a right or to require performance
+        Except
+        as provided herein, the failure to exercise a right or to require performance
         of an obligation under these Terms shall not affect a party''s ability to
         exercise such right or require such performance at any time thereafter nor
         shall the waiver of a breach constitute a waiver of any subsequent breach.
 
-        
+
 
         Translation
         Interpretation
@@ -13213,7 +13376,7 @@ PrefabInstance:
         if We have made them available to You on our Service. You agree that the
         original English text shall prevail in the case of a dispute.
 
-        
+
 
         Changes
         to These Terms and Conditions
@@ -13224,22 +13387,22 @@ PrefabInstance:
         prior to any new terms taking effect. What constitutes a material change
         will be determined at Our sole discretion.
 
-        
 
-        By continuing
-        to access or use Our Service after those revisions become effective, You
-        agree to be bound by the revised terms. If You do not agree to the new terms,
-        in whole or in part, please stop using the website and the Service.
 
-        
+        By continuing to access
+        or use Our Service after those revisions become effective, You agree to be
+        bound by the revised terms. If You do not agree to the new terms, in whole
+        or in part, please stop using the website and the Service.
+
+
 
         Contact
         Us
 
-        If you have any questions about these Terms and Conditions,
-        You can contact us:
+        If you have any questions about these Terms and Conditions, You
+        can contact us:
 
-        
+
 
         By email: Alexwalk101@icloud.com'
       objectReference: {fileID: 0}
@@ -13355,6 +13518,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116622199951116153, guid: a441677d32efd9e41b43f9ab42ebc41a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0009765625
+      objectReference: {fileID: 0}
     - target: {fileID: 7696975262152390932, guid: a441677d32efd9e41b43f9ab42ebc41a, type: 3}
       propertyPath: m_ChildControlHeight
       value: 1
@@ -13448,3 +13615,4 @@ SceneRoots:
   - {fileID: 164251333}
   - {fileID: 1725629484}
   - {fileID: 868960989}
+  - {fileID: 576297612}

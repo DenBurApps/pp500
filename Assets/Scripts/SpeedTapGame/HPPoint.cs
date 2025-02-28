@@ -8,6 +8,8 @@ public class HPPoint : MonoBehaviour
 {
     private Image _image;
 
+    public Image Image => _image;
+    
     private void Awake()
     {
         _image = GetComponent<Image>();
